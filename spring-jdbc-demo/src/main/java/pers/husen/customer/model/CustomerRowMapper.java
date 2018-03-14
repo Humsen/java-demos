@@ -13,7 +13,7 @@ import pers.husen.customer.Customer;
  * 2017年9月19日
  */
 
-public class CustomerRowMapper implements RowMapper {
+public class CustomerRowMapper implements RowMapper<Object> {
 	@Override
 	public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Customer customer = new Customer();

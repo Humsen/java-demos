@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button id="bt1">test接口</button>
+<input id="text" type="text">
+<button id="bt2">tests接口</button>
+
+<script>
+
+    var bt1 = document.getElementById("bt1");
+    var bt2 = document.getElementById("bt2");
+
+    bt1.onclick = test;
+
+    bt2.onclick = tests;
+
+    function test() {
+        console.log("test()");
+        XMLHttpRequest xhr = new XMLHttpRequest();
+        xhr.open("GET",http://127.0.0.1:8080/dubbo_customer/test");
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4){
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+            }
+        }
+    }
+
+    function tests() {
+        console.log("tests()");
+        var text = document.getElementById("text").value;
+        XMLHttpRequest xhr = new XMLHttpRequest();
+        xhr.open("GET",http://127.0.0.1:8080/dubbo_customer/test?str="+text);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4){
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
