@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<!-- 定义通用的属性 -->
+	<Properties>
+		<!-- 定义统一的日志输出格式 -->
+		<Property name="log_pattern">[%-5p] &lt;%d{yyyy-MM-dd HH:mm:ss,sss}&gt; at
+			[%C.%M] |--- %m ---| click goto-&gt; (%F:%L)%n</Property>
+
+		<!-- 高亮控制台输出 -->
+		<Property name="log_pattern_highlight">%highlight{${log_pattern}}{FATAL=Bright Red,
+			ERROR=Bright Magenta, WARN=Cyan, INFO=Green, DEBUG=Yellow,
+			TRACE=Bright Blue}
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- Gelf -->
+		<Gelf name="gelf" host="tcp:192.168.186.12" port="12201" version="1.0"
+			extractStackTrace="true" filterStackTrace="true" mdcProfiling="true"
+			includeFullMdc="true" maximumMessageSize="8192" originHost="developer host"
+			additionalFieldTypes="fieldName1=String,fieldName2=Double,fieldName3=Long"
+			ignoreExceptions="true">
+
+			<Field name="timestamp" pattern="%d{yyyy-MM-dd HH:mm:ss,sss}" />
+			<Field name="level" pattern="%level" />
+			<Field name="simpleClassName" pattern="%C{1}" />
+			<Field name="className" pattern="%C.%M" />
+			<Field name="server" pattern="%host" />
+			<!-- <Field name="server.fqdn" pattern="%host{fqdn}" /> -->
+			<!-- <Field name="fieldName2" literal="fieldValue2" /> This is a static 
+				field <Field name="mdcField2" mdc="mdcField2" /> This is a field using MDC 
+				<DynamicMdcFields regex="mdc.*" /> <DynamicMdcFields regex="(mdc|MDC)fields" -->
+			/>
+		</Gelf>
+		<!-- 控制台输出 -->
+		<Console name="console_out_appender" target="SYSTEM_OUT">
+			<!-- level定义级别 -->
+			<ThresholdFilter level="trace" onMatch="ACCEPT"
+				onMismatch="DENY" />
+			<PatternLayout pattern="${log_pattern_highlight}" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="gelf" />
+			<appender-ref ref="console_out_appender" />
+		</Root>
+	</Loggers>
+</Configuration>
