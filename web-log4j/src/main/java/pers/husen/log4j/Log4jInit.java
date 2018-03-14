@@ -17,8 +17,8 @@ public class Log4jInit {
 
 	public static void main(String[] args) {
 		// System.out.println(System.getProperty("user.dir"));
-		String root = System.getProperty("user.dir");
-		String path = root + "/config/log4j2.xml";
+		//String root = System.getProperty("user.dir");
+		//String path = root + "/config/log4j2.xml";
 		testLog4j();
 	}
 

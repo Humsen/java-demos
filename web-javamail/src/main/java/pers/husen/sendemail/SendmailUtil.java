@@ -16,7 +16,6 @@ import com.sun.mail.util.MailSSLSocketFactory;
 
 public class SendmailUtil {
 	public static void main(String[] args) throws GeneralSecurityException, MessagingException {
-		// TODO Auto-generated method stub
 		// 用于读取配置文件
 		Properties props = new Properties();
 		// 开启Debug调试

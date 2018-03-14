@@ -15,7 +15,9 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public class UploadHandleServlet extends HttpServlet {
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+	private static final long serialVersionUID = 1L;
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
                 //得到上传文件的保存目录，将上传的文件存放于WEB-INF目录下，不允许外界直接访问，保证上传文件的安全
                 String savePath = this.getServletContext().getRealPath("/WEB-INF/upload");
