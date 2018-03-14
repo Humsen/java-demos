@@ -26,3 +26,5 @@ logs
 .project
 .classpath
 target
+build
+META-INF

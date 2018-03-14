@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>pers.husen.demo</groupId>
-	<artifactId>Spring-AOP-demo</artifactId>
+	<artifactId>spring-aop-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Spring-AOP-demo</name>
+	<name>spring-aop-demo</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
