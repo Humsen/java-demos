@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>web_log4j1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+ <!--  <servlet>
+    <servlet-name>Log4jServlet</servlet-name>
+    <servlet-class>pers.husen.log4j.Log4jServlet</servlet-class>
+    <init-param>
+    	<param-name>log4jConfig</param-name>
+    	<param-value>config\log4j2.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet> -->
+  <listener>
+    <listener-class>pers.husen.log4j.Log4j2ConfigListener</listener-class>
+  </listener>
+</web-app>

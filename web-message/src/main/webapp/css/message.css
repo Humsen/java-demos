@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.meessage-input {
+	/* display: block; */
+	background-image: none; 
+	margin: 10px 0px 0px 5px;
+	height: 100px;
+	width: 815px;
+	resize: none;
+}
