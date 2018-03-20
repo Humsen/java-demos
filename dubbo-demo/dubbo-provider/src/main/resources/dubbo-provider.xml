@@ -16,9 +16,9 @@
 	<dubbo:protocol name="dubbo" />
 
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service interface="cn.thinglin.dubbodemo.service.TestService" ref="testService" />
+	<dubbo:service interface="pers.husen.demo.dubbo.TestService" ref="testService" />
 
 	<!-- 具体的实现bean -->
-	<bean id="testService" class="cn.thinglin.dubbodemo.service.impl.TestServiceImpl" />
+	<bean id="testService" class="pers.husen.demo.dubbo.service.TestServiceImpl" />
 
 </beans>
