@@ -11,7 +11,7 @@
 
 	<properties>
 		<org.springframework.version>4.3.14.RELEASE</org.springframework.version>
-		<log4j2.version>2.9.0</log4j2.version>
+		<log4j2.version>2.13.3</log4j2.version>
 	</properties>
 
 	<dependencyManagement>
